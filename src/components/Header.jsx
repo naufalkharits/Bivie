@@ -4,15 +4,16 @@ import Search from "./Search/Search"
 
 const Header = () => {
   return (
-    <AppBar>
+    <AppBar position="static">
       <Container>
         <Toolbar disableGutters>
           <Slideshow />
           <Typography
             sx={{ display: { xs: "none", sm: "block" } }}
+            component="h1"
             variant="h6"
           >
-            Brand
+            Bivie
           </Typography>
           <Search>Search movie</Search>
         </Toolbar>
