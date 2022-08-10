@@ -1,5 +1,6 @@
 import { AppBar, Container, Toolbar, Typography } from "@mui/material"
 import { Slideshow } from "@mui/icons-material"
+import Search from "./Search/Search"
 
 const Header = () => {
   return (
@@ -13,6 +14,7 @@ const Header = () => {
           >
             Brand
           </Typography>
+          <Search>Search movie</Search>
         </Toolbar>
       </Container>
     </AppBar>
