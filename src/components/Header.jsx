@@ -4,18 +4,23 @@ import Search from "./Search/Search"
 
 const Header = () => {
   return (
-    <AppBar position="static">
+    <AppBar sx={{ backgroundColor: "primary.contrastText" }} position="static">
       <Container>
-        <Toolbar disableGutters>
-          <Slideshow />
-          <Typography
-            sx={{ display: { xs: "none", sm: "block" } }}
-            component="h1"
-            variant="h6"
-          >
-            Bivie
+        <Toolbar sx={{ justifyContent: "space-between" }} disableGutters>
+          <Toolbar disableGutters>
+            <Slideshow fontSize="large" color="primary" />
+            <Typography
+              sx={{ display: { xs: "none", sm: "block" } }}
+              component="h1"
+              color="secondary.contrastText"
+            >
+              Bivie
+            </Typography>
+            <Search />
+          </Toolbar>
+          <Typography component="h2" color="secondary.contrastText">
+            Sign in
           </Typography>
-          <Search>Search movie</Search>
         </Toolbar>
       </Container>
     </AppBar>

@@ -14,10 +14,15 @@ function App() {
     <ThemeProvider theme={mui}>
       <Header />
       <Container>
-        <Typography component="h3" variant="h6">
+        <Typography gutterBottom component="h3">
           Browse by category
         </Typography>
         <Grid container spacing={2}>
+          <MovieCard />
+          <MovieCard />
+          <MovieCard />
+          <MovieCard />
+          <MovieCard />
           <MovieCard />
         </Grid>
       </Container>

@@ -2,7 +2,6 @@ import { InputBase, styled } from "@mui/material"
 
 export const SearchWrapper = styled("div")(({ theme }) => ({
   position: "relative",
-  backgroundColor: theme.palette.primary.contrastText,
   borderRadius: theme.shape.borderRadius,
 }))
 

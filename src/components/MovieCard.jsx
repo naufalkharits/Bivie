@@ -13,12 +13,8 @@ const MovieCard = () => {
       <Card>
         <CardMedia component="img" image={SaintSeiya} alt="" />
         <CardContent>
-          <Typography component="h2" variant="subtitle1">
-            Saint Seiya
-          </Typography>
-          <Typography component="h4" variant="subtitle2">
-            Anime
-          </Typography>
+          <Typography component="h2">Saint Seiya</Typography>
+          <Typography component="h4">Anime</Typography>
         </CardContent>
       </Card>
     </Grid>

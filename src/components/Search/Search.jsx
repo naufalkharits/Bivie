@@ -7,11 +7,13 @@ import {
 
 const Search = () => {
   return (
-    <SearchWrapper>
+    <SearchWrapper
+      sx={{ marginLeft: 2, border: 1, borderColor: "secondary.contrastText" }}
+    >
       <SearchIconWrapper>
         <SearchIcon />
       </SearchIconWrapper>
-      <StyledInputBase />
+      <StyledInputBase placeholder="Search movie..." />
     </SearchWrapper>
   )
 }
