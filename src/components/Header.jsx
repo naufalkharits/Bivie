@@ -7,6 +7,7 @@ import {
   Typography,
 } from "@mui/material"
 import { Slideshow } from "@mui/icons-material"
+import { Pagination } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 import Search from "./Search/Search"
 import SaintSeiya from "../assets/images/saint-seiya-banner 1.png"
@@ -41,7 +42,11 @@ const Header = () => {
           </Toolbar>
         </Container>
       </AppBar>
-      <Swiper loop={true}>
+      <Swiper
+        modules={[Pagination]}
+        loop={true}
+        pagination={{ clickable: true }}
+      >
         <SwiperSlide>
           <StyledImage src={SaintSeiya} alt="" />
         </SwiperSlide>
