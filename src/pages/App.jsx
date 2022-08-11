@@ -1,17 +1,11 @@
-import {
-  Container,
-  ThemeProvider,
-  Typography,
-  Unstable_Grid2 as Grid,
-} from "@mui/material"
+import { Container, Typography, Unstable_Grid2 as Grid } from "@mui/material"
 import "./App.css"
-import mui from "../../config/mui"
 import Header from "../components/Header"
 import MovieCard from "../components/MovieCard"
 
 function App() {
   return (
-    <ThemeProvider theme={mui}>
+    <>
       <Header />
       <Container>
         <Typography gutterBottom component="h3">
@@ -26,7 +20,7 @@ function App() {
           <MovieCard />
         </Grid>
       </Container>
-    </ThemeProvider>
+    </>
   )
 }
 
