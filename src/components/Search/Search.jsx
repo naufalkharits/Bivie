@@ -7,9 +7,7 @@ import {
 
 const Search = () => {
   return (
-    <SearchWrapper
-      sx={{ marginLeft: 2, border: 1, borderColor: "secondary.contrastText" }}
-    >
+    <SearchWrapper>
       <SearchIconWrapper>
         <SearchIcon />
       </SearchIconWrapper>
