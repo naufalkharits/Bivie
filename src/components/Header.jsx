@@ -9,8 +9,10 @@ import {
 import { Slideshow } from "@mui/icons-material"
 import { Pagination } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
+
 import Search from "./Search/Search"
-import SaintSeiya from "../assets/images/saint-seiya-banner 1.png"
+
+import useGetTrendingMovies from "../hooks/useGetTrendingMovies"
 
 export const StyledImage = styled("img")(({ theme }) => ({
   height: "24rem",
@@ -19,6 +21,8 @@ export const StyledImage = styled("img")(({ theme }) => ({
 }))
 
 const Header = () => {
+  const { data } = useGetTrendingMovies()
+
   return (
     <>
       <AppBar
@@ -47,15 +51,23 @@ const Header = () => {
         loop={true}
         pagination={{ clickable: true }}
       >
-        <SwiperSlide>
-          <StyledImage src={SaintSeiya} alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <StyledImage src={SaintSeiya} alt="" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <StyledImage src={SaintSeiya} alt="" />
-        </SwiperSlide>
+        {data?.results.slice(0, 3).map((trendingMovie) => (
+          <SwiperSlide key={trendingMovie.id}>
+            <StyledImage
+              src={`${import.meta.env.VITE_TMDB_API_IMAGE_URL}/original/${
+                trendingMovie.backdrop_path
+              }`}
+              alt=""
+            />
+            <Typography
+              sx={{ position: "absolute", top: "4rem", left: "2rem" }}
+              component="h2"
+              variant="h4"
+            >
+              {trendingMovie.title}
+            </Typography>
+          </SwiperSlide>
+        ))}
       </Swiper>
     </>
   )
