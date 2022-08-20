@@ -21,7 +21,7 @@ const MovieCard = ({ movie }) => {
         />
         <CardContent>
           <Typography component="h2" noWrap={true}>
-            {movie.original_title}
+            {movie.title}
           </Typography>
           <Typography>{`⭐${movie.vote_average} (${movie.vote_count})`}</Typography>
         </CardContent>

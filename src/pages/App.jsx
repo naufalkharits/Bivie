@@ -18,7 +18,7 @@ function App() {
           Browse by category
         </Typography>
         <Grid container spacing={2}>
-          {data?.results?.map((movie) => (
+          {data?.results.map((movie) => (
             <MovieCard key={movie.id} movie={movie} />
           ))}
         </Grid>
