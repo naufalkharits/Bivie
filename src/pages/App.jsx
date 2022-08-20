@@ -1,30 +1,21 @@
-import { Container, Typography, Unstable_Grid2 as Grid } from "@mui/material"
+import { ReactLocation, Router } from "@tanstack/react-location"
+// import { MakeGenerics } from "@tanstack/react-location"
 
 import "./App.css"
 
-import Header from "../components/Header"
-import MovieCard from "../components/MovieCard"
-
-import useGetMovies from "../hooks/useGetMovies"
+import Home from "./Home"
 
 function App() {
-  const { data } = useGetMovies()
+  const routes = [
+    {
+      path: "/",
+      element: <Home />,
+    },
+  ]
 
-  return (
-    <>
-      <Header />
-      <Container>
-        <Typography gutterBottom component="h3">
-          Browse by category
-        </Typography>
-        <Grid container spacing={2}>
-          {data?.results.map((movie) => (
-            <MovieCard key={movie.id} movie={movie} />
-          ))}
-        </Grid>
-      </Container>
-    </>
-  )
+  const location = new ReactLocation()
+
+  return <Router location={location} routes={routes} />
 }
 
 export default App
