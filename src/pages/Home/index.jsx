@@ -48,13 +48,13 @@ const Home = () => {
           Browse by category
         </Typography>
         <Grid container spacing={2}>
-          {data?.results.map((movie) => (
+          {data?.results?.map((movie) => (
             <MovieCard key={movie.id} movie={movie} />
           ))}
         </Grid>
         <Pagination
           page={location.current.search.page || 1}
-          count={data?.total_pages}
+          count={500}
           renderItem={(item) => (
             <PaginationItem
               component={"a"}
