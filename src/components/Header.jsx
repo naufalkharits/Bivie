@@ -25,6 +25,7 @@ const Header = () => {
 
   return (
     <>
+      {/* topbar */}
       <AppBar
         sx={{ backgroundColor: "primary.contrastText" }}
         position="static"
@@ -46,6 +47,7 @@ const Header = () => {
           </Toolbar>
         </Container>
       </AppBar>
+      {/* hero */}
       <Swiper
         modules={[Pagination]}
         loop={true}
@@ -59,13 +61,13 @@ const Header = () => {
               }`}
               alt=""
             />
-            <Typography
+            {/* <Typography
               sx={{ position: "absolute", top: "4rem", left: "2rem" }}
               component="h2"
               variant="h4"
             >
               {trendingMovie.title}
-            </Typography>
+            </Typography> */}
           </SwiperSlide>
         ))}
       </Swiper>

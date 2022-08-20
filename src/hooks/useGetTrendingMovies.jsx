@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query"
 
-export const getTrendingMovies = async () =>
-  await fetch(
+export const getTrendingMovies = () =>
+  fetch(
     `${import.meta.env.VITE_TMDB_API_BASE_URL}/trending/movie/day?api_key=${
       import.meta.env.VITE_TMDB_API_KEY
     }`,
