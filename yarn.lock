@@ -642,6 +642,24 @@
     "@types/use-sync-external-store" "^0.0.3"
     use-sync-external-store "^1.2.0"
 
+"@tanstack/react-router@^0.0.1-beta.38":
+  version "0.0.1-beta.38"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-router/-/react-router-0.0.1-beta.38.tgz#3174c0632a023af2cf040baa745a8d5182506a8a"
+  integrity sha512-i/pKuHZLwwB3bmP+Ty8bJtGfitrVNaYGbwtXtTw/jqhm6rXN6fd14jT4yW4XcktecSoWE6QK0yTE7viqdaEGuQ==
+  dependencies:
+    "@babel/runtime" "^7.16.7"
+    "@tanstack/router-core" "0.0.1-beta.36"
+    use-sync-external-store "^1.2.0"
+
+"@tanstack/router-core@0.0.1-beta.36":
+  version "0.0.1-beta.36"
+  resolved "https://registry.yarnpkg.com/@tanstack/router-core/-/router-core-0.0.1-beta.36.tgz#4701d757cb39e325f53d9eb25584eaacea6e90f2"
+  integrity sha512-debjgkz4v1b0BqgEOaaBN9GVPHibB9IdURa8sE62YZ6xCRfmwPkglxwqx9zbOm1qGBG0edJy2FhXuI0meAHHzQ==
+  dependencies:
+    "@babel/runtime" "^7.16.7"
+    history "^5.2.0"
+    tiny-invariant "^1.3.1"
+
 "@types/parse-json@^4.0.0":
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/@types/parse-json/-/parse-json-4.0.0.tgz#2f8bb441434d163b35fb8ffdccd7138927ffb8c0"
@@ -1179,6 +1197,11 @@ swiper@^8.3.2:
   dependencies:
     dom7 "^4.0.4"
     ssr-window "^4.0.2"
+
+tiny-invariant@^1.3.1:
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/tiny-invariant/-/tiny-invariant-1.3.1.tgz#8560808c916ef02ecfd55e66090df23a4b7aa642"
+  integrity sha512-AD5ih2NlSssTCwsMznbvwMZpJ1cbhkGd2uueNxzv2jDlEeZdU04JQfRnggJQ8DrcVBGjAsCKwFBbDlVNtEMlzw==
 
 to-fast-properties@^2.0.0:
   version "2.0.0"
