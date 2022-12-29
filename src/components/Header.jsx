@@ -19,7 +19,7 @@ const Header = () => {
   return (
     <>
       {/* topbar */}
-      <AppBar sx={{ backgroundColor: "primary.contrastText" }} position="static">
+      <AppBar sx={{ backgroundColor: "white" }} position="static">
         <Container>
           <Toolbar sx={{ justifyContent: "space-between" }} disableGutters>
             <Toolbar disableGutters>
