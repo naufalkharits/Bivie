@@ -1,7 +1,7 @@
-import { ReactLocation } from "@tanstack/react-location"
 import { useQuery } from "@tanstack/react-query"
+import { useRouter } from "@tanstack/react-router"
 
-export const getMovies = async (page) => {
+const getMovies = async (page) => {
   try {
     const response = await fetch(
       `${import.meta.env.VITE_TMDB_API_BASE_URL}/discover/movie?page=${page}&api_key=${
@@ -17,11 +17,11 @@ export const getMovies = async (page) => {
     return console.error(error)
   }
 }
+
 const useGetMovies = () => {
-  const location = new ReactLocation()
-  return useQuery(["movies"], () =>
-    getMovies(location.current.search.page || 1)
-  )
+  const router = useRouter()
+
+  return useQuery(["movies"], () => getMovies(router.state.currentLocation.search.page || 1))
 }
 
 export default useGetMovies
