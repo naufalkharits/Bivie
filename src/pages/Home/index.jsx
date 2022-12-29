@@ -1,27 +1,32 @@
 import { Container, Typography, Unstable_Grid2 as Grid } from "@mui/material"
 import { useRouter } from "@tanstack/react-router"
 
-import Header from "../../components/Header"
+import useGetMovies from "../../hooks/useGetMovies"
+import useGetTrendingMovies from "../../hooks/useGetTrendingMovies"
+
+import Header from "../../components/Header/Header"
 import MovieCard from "../../components/MovieCard"
 import PageButton from "../../components/PageButton"
-
-import useGetMovies from "../../hooks/useGetMovies"
+import Topbar from "../../components/Topbar"
 
 const Home = () => {
-  const { data, isLoading } = useGetMovies()
+  const movies = useGetMovies()
+  const trendingMovies = useGetTrendingMovies()
+
   const router = useRouter()
 
   return (
     <>
-      <Header />
+      <Topbar />
+      <Header trendingMovies={trendingMovies} />
       <Container>
-        {!isLoading && (
+        {!movies.isLoading && (
           <>
             <Typography gutterBottom component="h3">
               Browse by category
             </Typography>
             <Grid container spacing={2}>
-              {data?.results?.map((movie) => (
+              {movies.data?.results.map((movie) => (
                 <MovieCard key={movie.id} movie={movie} />
               ))}
             </Grid>

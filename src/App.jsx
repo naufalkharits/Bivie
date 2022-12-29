@@ -9,9 +9,9 @@ const TanStackRouterDevtools =
         }))
       )
 
-import "./App.css"
-
 import router from "./pages"
+
+import "./App.css"
 
 function App() {
   return (
