@@ -8,22 +8,26 @@ import PageButton from "../../components/PageButton"
 import useGetMovies from "../../hooks/useGetMovies"
 
 const Home = () => {
-  const { data } = useGetMovies()
+  const { data, isLoading } = useGetMovies()
   const router = useRouter()
 
   return (
     <>
       <Header />
       <Container>
-        <Typography gutterBottom component="h3">
-          Browse by category
-        </Typography>
-        <Grid container spacing={2}>
-          {data?.results?.map((movie) => (
-            <MovieCard key={movie.id} movie={movie} />
-          ))}
-        </Grid>
-        <PageButton router={router} />
+        {!isLoading && (
+          <>
+            <Typography gutterBottom component="h3">
+              Browse by category
+            </Typography>
+            <Grid container spacing={2}>
+              {data?.results?.map((movie) => (
+                <MovieCard key={movie.id} movie={movie} />
+              ))}
+            </Grid>
+            <PageButton router={router} />
+          </>
+        )}
       </Container>
     </>
   )
