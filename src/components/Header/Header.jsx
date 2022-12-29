@@ -6,12 +6,10 @@ import { StyledImage } from "./Header.styled"
 const Header = (props) => {
   return (
     <Swiper modules={[Pagination]} loop={true} pagination={{ clickable: true }}>
-      {props.data?.results.slice(0, 3).map((trendingMovie) => (
-        <SwiperSlide key={trendingMovie.id}>
+      {props.trendingMovies.data?.results.slice(0, 3).map((movie) => (
+        <SwiperSlide key={movie.id}>
           <StyledImage
-            src={`${import.meta.env.VITE_TMDB_API_IMAGE_URL}/original/${
-              trendingMovie.backdrop_path
-            }`}
+            src={`${import.meta.env.VITE_TMDB_API_IMAGE_URL}/original/${movie.backdrop_path}`}
             alt=""
           />
           {/* <Typography
