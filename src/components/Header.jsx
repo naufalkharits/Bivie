@@ -1,12 +1,5 @@
-import {
-  AppBar,
-  Button,
-  Container,
-  styled,
-  Toolbar,
-  Typography,
-} from "@mui/material"
 import { Slideshow } from "@mui/icons-material"
+import { AppBar, Button, Container, styled, Toolbar, Typography } from "@mui/material"
 import { Pagination } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 
@@ -26,10 +19,7 @@ const Header = () => {
   return (
     <>
       {/* topbar */}
-      <AppBar
-        sx={{ backgroundColor: "primary.contrastText" }}
-        position="static"
-      >
+      <AppBar sx={{ backgroundColor: "primary.contrastText" }} position="static">
         <Container>
           <Toolbar sx={{ justifyContent: "space-between" }} disableGutters>
             <Toolbar disableGutters>
@@ -37,8 +27,7 @@ const Header = () => {
               <Typography
                 sx={{ display: { xs: "none", sm: "block" } }}
                 component="h1"
-                color="secondary.contrastText"
-              >
+                color="black">
                 Bivie
               </Typography>
               <Search />
@@ -48,11 +37,7 @@ const Header = () => {
         </Container>
       </AppBar>
       {/* hero */}
-      <Swiper
-        modules={[Pagination]}
-        loop={true}
-        pagination={{ clickable: true }}
-      >
+      <Swiper modules={[Pagination]} loop={true} pagination={{ clickable: true }}>
         {data?.results.slice(0, 3).map((trendingMovie) => (
           <SwiperSlide key={trendingMovie.id}>
             <StyledImage
