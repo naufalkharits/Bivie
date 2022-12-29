@@ -1,68 +1,38 @@
-import {
-  Container,
-  Pagination,
-  PaginationItem,
-  Typography,
-  Unstable_Grid2 as Grid,
-} from "@mui/material"
-import { ReactLocation, useNavigate } from "@tanstack/react-location"
-
-import Header from "../../components/Header"
-import MovieCard from "../../components/MovieCard"
+import { Container, Typography, Unstable_Grid2 as Grid } from "@mui/material"
+import { useRouter } from "@tanstack/react-router"
 
 import useGetMovies from "../../hooks/useGetMovies"
+import useGetTrendingMovies from "../../hooks/useGetTrendingMovies"
+
+import Header from "../../components/Header/Header"
+import MovieCard from "../../components/MovieCard"
+import PageButton from "../../components/PageButton"
+import Topbar from "../../components/Topbar"
 
 const Home = () => {
-  const location = new ReactLocation()
-  // const navigate = useNavigate()
-  const { data } = useGetMovies()
+  const movies = useGetMovies()
+  const trendingMovies = useGetTrendingMovies()
 
-  // const nextPage = () => {
-  //   navigate({
-  //     search: (old) => ({
-  //       ...old,
-  //       pagination: {
-  //         ...old.pagination,
-  //         index: old.pagination.index + 1,
-  //       },
-  //     }),
-  //   })
-  // }
-  // const previousPage = () => {
-  //   navigate({
-  //     search: (old) => ({
-  //       ...old,
-  //       pagination: {
-  //         ...old.pagination,
-  //         index: old.pagination.index - 1,
-  //       },
-  //     }),
-  //   })
-  // }
+  const router = useRouter()
 
   return (
     <>
-      <Header />
+      <Topbar />
+      <Header trendingMovies={trendingMovies} />
       <Container>
-        <Typography gutterBottom component="h3">
-          Browse by category
-        </Typography>
-        <Grid container spacing={2}>
-          {data?.results?.map((movie) => (
-            <MovieCard key={movie.id} movie={movie} />
-          ))}
-        </Grid>
-        <Pagination
-          page={location.current.search.page || 1}
-          count={500}
-          renderItem={(item) => (
-            <PaginationItem
-              component={"a"}
-              href={item.page === 1 ? "/" : `?page=${item.page}`}
-              {...item}
-            />
-          )}
-        />
+        {!movies.isLoading && (
+          <>
+            <Typography gutterBottom component="h3">
+              Browse by category
+            </Typography>
+            <Grid container spacing={2}>
+              {movies.data?.results.map((movie) => (
+                <MovieCard key={movie.id} movie={movie} />
+              ))}
+            </Grid>
+            <PageButton router={router} />
+          </>
+        )}
       </Container>
     </>
   )

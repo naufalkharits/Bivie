@@ -1,23 +1,27 @@
-import { ReactLocation } from "@tanstack/react-location"
 import { useQuery } from "@tanstack/react-query"
+import { useRouter } from "@tanstack/react-router"
 
-export const getMovies = (page) =>
-  fetch(
-    `${
-      import.meta.env.VITE_TMDB_API_BASE_URL
-    }/discover/movie?page=${page}&api_key=${import.meta.env.VITE_TMDB_API_KEY}`,
-    {
-      method: "GET",
-    }
-  )
-    .then((response) => response.json())
-    .catch((error) => console.error(error))
+const getMovies = async (page) => {
+  try {
+    const response = await fetch(
+      `${import.meta.env.VITE_TMDB_API_BASE_URL}/discover/movie?page=${page}&api_key=${
+        import.meta.env.VITE_TMDB_API_KEY
+      }`,
+      {
+        method: "GET",
+      }
+    )
+
+    return await response.json()
+  } catch (error) {
+    return console.error(error)
+  }
+}
 
 const useGetMovies = () => {
-  const location = new ReactLocation()
-  return useQuery(["movies"], () =>
-    getMovies(location.current.search.page || 1)
-  )
+  const router = useRouter()
+
+  return useQuery(["movies"], () => getMovies(router.state.currentLocation.search.page || 1))
 }
 
 export default useGetMovies

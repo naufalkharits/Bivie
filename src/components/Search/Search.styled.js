@@ -14,7 +14,7 @@ export const SearchIconWrapper = styled("div")(({ theme }) => ({
   display: "flex",
   alignItems: "center",
   justifyContent: "center",
-  color: theme.palette.secondary.contrastText,
+  color: "black",
 }))
 
 export const StyledInputBase = styled(InputBase)(({ theme }) => ({

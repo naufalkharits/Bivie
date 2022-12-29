@@ -1,29 +1,21 @@
-import {
-  Card,
-  Unstable_Grid2 as Grid,
-  CardMedia,
-  CardContent,
-  Typography,
-} from "@mui/material"
+import { Card, CardContent, CardMedia, Typography, Unstable_Grid2 as Grid } from "@mui/material"
 
-import SaintSeiya from "../assets/images/saintseiya 1.png"
-
-const MovieCard = ({ movie }) => {
+const MovieCard = (props) => {
   return (
     <Grid xs={6} sm={3} md={2}>
       <Card>
         <CardMedia
           component="img"
-          image={`${import.meta.env.VITE_TMDB_API_IMAGE_URL}/w500/${
-            movie.poster_path
-          }`}
+          height="264"
+          loading="lazy"
+          image={`${import.meta.env.VITE_TMDB_API_IMAGE_URL}/w500/${props.movie.poster_path}`}
           alt=""
         />
         <CardContent>
           <Typography component="h2" noWrap={true}>
-            {movie.title}
+            {props.movie.title}
           </Typography>
-          <Typography>{`⭐${movie.vote_average} (${movie.vote_count})`}</Typography>
+          <Typography>{`⭐${props.movie.vote_average} (${props.movie.vote_count})`}</Typography>
         </CardContent>
       </Card>
     </Grid>
