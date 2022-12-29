@@ -1,44 +1,15 @@
-import {
-  Container,
-  Pagination,
-  PaginationItem,
-  Typography,
-  Unstable_Grid2 as Grid,
-} from "@mui/material"
-import { ReactLocation, useNavigate } from "@tanstack/react-location"
+import { Container, Typography, Unstable_Grid2 as Grid } from "@mui/material"
+import { useRouter } from "@tanstack/react-router"
 
 import Header from "../../components/Header"
 import MovieCard from "../../components/MovieCard"
+import PageButton from "../../components/PageButton"
 
 import useGetMovies from "../../hooks/useGetMovies"
 
 const Home = () => {
-  const location = new ReactLocation()
-  // const navigate = useNavigate()
   const { data } = useGetMovies()
-
-  // const nextPage = () => {
-  //   navigate({
-  //     search: (old) => ({
-  //       ...old,
-  //       pagination: {
-  //         ...old.pagination,
-  //         index: old.pagination.index + 1,
-  //       },
-  //     }),
-  //   })
-  // }
-  // const previousPage = () => {
-  //   navigate({
-  //     search: (old) => ({
-  //       ...old,
-  //       pagination: {
-  //         ...old.pagination,
-  //         index: old.pagination.index - 1,
-  //       },
-  //     }),
-  //   })
-  // }
+  const router = useRouter()
 
   return (
     <>
@@ -52,17 +23,7 @@ const Home = () => {
             <MovieCard key={movie.id} movie={movie} />
           ))}
         </Grid>
-        <Pagination
-          page={location.current.search.page || 1}
-          count={500}
-          renderItem={(item) => (
-            <PaginationItem
-              component={"a"}
-              href={item.page === 1 ? "/" : `?page=${item.page}`}
-              {...item}
-            />
-          )}
-        />
+        <PageButton router={router} />
       </Container>
     </>
   )
