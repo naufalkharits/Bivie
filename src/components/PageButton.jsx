@@ -1,3 +1,5 @@
+import ArrowBackIcon from "@mui/icons-material/ArrowBack"
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward"
 import { Pagination, PaginationItem } from "@mui/material"
 
 const PageButton = (props) => {
@@ -10,7 +12,7 @@ const PageButton = (props) => {
       size="large"
       renderItem={(item) => (
         <PaginationItem
-          component={"a"}
+          slots={{ previous: ArrowBackIcon, next: ArrowForwardIcon }}
           href={item.page === 1 ? "/" : `?page=${item.page}`}
           {...item}
         />
