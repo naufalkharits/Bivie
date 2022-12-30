@@ -10,7 +10,12 @@ const Topbar = () => {
         <Toolbar sx={{ justifyContent: "space-between" }} disableGutters>
           <Toolbar disableGutters>
             <Slideshow fontSize="large" color="primary" />
-            <Typography sx={{ display: { xs: "none", sm: "block" } }} component="h1" color="black">
+            <Typography
+              sx={{ display: { xs: "none", sm: "block" } }}
+              component="h1"
+              fontSize="1.25rem"
+              fontWeight="500"
+              color="black">
               Bivie
             </Typography>
             <Search />
