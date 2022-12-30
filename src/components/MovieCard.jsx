@@ -12,7 +12,7 @@ const MovieCard = (props) => {
           alt=""
         />
         <CardContent>
-          <Typography component="h2" noWrap={true}>
+          <Typography component="h2" fontWeight="500" noWrap={true}>
             {props.movie.title}
           </Typography>
           <Typography>{`⭐${props.movie.vote_average} (${props.movie.vote_count})`}</Typography>
