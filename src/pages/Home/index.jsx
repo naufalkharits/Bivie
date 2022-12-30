@@ -22,7 +22,7 @@ const Home = () => {
       <Container>
         {!movies.isLoading && (
           <>
-            <Typography gutterBottom component="h3">
+            <Typography gutterBottom component="h3" fontSize="1.25rem" fontWeight="500">
               Browse by category
             </Typography>
             <Grid container spacing={2}>
