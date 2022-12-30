@@ -2,7 +2,7 @@ import { Card, CardContent, CardMedia, Typography, Unstable_Grid2 as Grid } from
 
 const MovieCard = (props) => {
   return (
-    <Grid xs={6} sm={3} md={2}>
+    <Grid xs={6} sm={4} md={3} lg={2}>
       <Card sx={{ borderRadius: "0.5rem" }}>
         <CardMedia
           component="img"
