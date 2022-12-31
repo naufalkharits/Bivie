@@ -12,13 +12,6 @@ const Header = (props) => {
             src={`${import.meta.env.VITE_TMDB_API_IMAGE_URL}/original/${movie.backdrop_path}`}
             alt=""
           />
-          {/* <Typography
-              sx={{ position: "absolute", top: "4rem", left: "2rem" }}
-              component="h2"
-              variant="h4"
-            >
-              {trendingMovie.title}
-            </Typography> */}
         </SwiperSlide>
       ))}
     </Swiper>
