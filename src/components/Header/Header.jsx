@@ -13,6 +13,7 @@ const Header = (props) => {
       {props.trendingMovies.data?.results.slice(0, 3).map((movie) => (
         <SwiperSlide key={movie.id}>
           <StyledImage
+            loading="lazy"
             src={`${import.meta.env.VITE_TMDB_API_IMAGE_URL}/original/${movie.backdrop_path}`}
             alt=""
           />
