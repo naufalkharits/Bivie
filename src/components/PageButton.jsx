@@ -1,5 +1,4 @@
-import ArrowBackIcon from "@mui/icons-material/ArrowBack"
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward"
+import { ArrowBack as ArrowBackIcon, ArrowForward as ArrowForwardIcon } from "@mui/icons-material"
 import { Pagination, PaginationItem, Stack } from "@mui/material"
 
 const PageButton = (props) => {
