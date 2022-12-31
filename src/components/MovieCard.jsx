@@ -24,7 +24,7 @@ const MovieCard = (props) => {
       <Card sx={{ borderRadius: "0.5rem" }}>
         <CardMedia
           component="img"
-          height="264"
+          height={264}
           loading="lazy"
           image={`${import.meta.env.VITE_TMDB_API_IMAGE_URL}/w500/${props.movie.poster_path}`}
           alt=""
