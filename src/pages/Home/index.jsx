@@ -8,6 +8,7 @@ import useGetTrendingMovies from "../../hooks/useGetTrendingMovies"
 import Header from "../../components/Header/Header"
 import MovieCard from "../../components/MovieCard"
 import PageButton from "../../components/PageButton"
+import MovieCardSkeleton from "../../components/skeletons/MovieCard.skeleton"
 import Topbar from "../../components/Topbar"
 
 const Home = () => {
@@ -21,11 +22,12 @@ const Home = () => {
       <Topbar />
       <Header trendingMovies={trendingMovies} />
       <Container>
+        <Typography gutterBottom component="h3" fontSize="1.25rem" fontWeight="500">
+          Browse by category
+        </Typography>
+        {movies.isLoading && <MovieCardSkeleton />}
         {!movies.isLoading && (
           <>
-            <Typography gutterBottom component="h3" fontSize="1.25rem" fontWeight="500">
-              Browse by category
-            </Typography>
             <Grid component={motion.div} layout container spacing={2}>
               <AnimatePresence>
                 {movies.data?.results.map((movie) => (

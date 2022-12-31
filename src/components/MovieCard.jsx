@@ -1,4 +1,12 @@
-import { Card, CardContent, CardMedia, Typography, Unstable_Grid2 as Grid } from "@mui/material"
+import StarIcon from "@mui/icons-material/Star"
+import {
+  Card,
+  CardContent,
+  CardMedia,
+  Stack,
+  Typography,
+  Unstable_Grid2 as Grid,
+} from "@mui/material"
 import { motion } from "framer-motion"
 
 const MovieCard = (props) => {
@@ -16,7 +24,7 @@ const MovieCard = (props) => {
       <Card sx={{ borderRadius: "0.5rem" }}>
         <CardMedia
           component="img"
-          height="264"
+          height={264}
           loading="lazy"
           image={`${import.meta.env.VITE_TMDB_API_IMAGE_URL}/w500/${props.movie.poster_path}`}
           alt=""
@@ -25,12 +33,11 @@ const MovieCard = (props) => {
           <Typography component="h2" fontWeight="500" noWrap={true}>
             {props.movie.title}
           </Typography>
-          <Typography>
-            {`⭐${props.movie.vote_average}`}
-            <Typography
-              component="span"
-              fontWeight="300">{` (${props.movie.vote_count})`}</Typography>
-          </Typography>
+          <Stack direction="row" alignItems="center" spacing={0.5}>
+            <StarIcon color="primary" />
+            <Typography>{props.movie.vote_average}</Typography>
+            <Typography fontWeight="300">{`(${props.movie.vote_count})`}</Typography>
+          </Stack>
         </CardContent>
       </Card>
     </Grid>
