@@ -11,7 +11,7 @@ import PageButton from "../../components/PageButton"
 import MovieCardSkeleton from "../../components/skeletons/MovieCard.skeleton"
 import Topbar from "../../components/Topbar"
 
-const Home = () => {
+function Home() {
   const movies = useGetMovies()
   const trendingMovies = useGetTrendingMovies()
 

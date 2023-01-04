@@ -3,7 +3,7 @@ import { AppBar, Button, Container, Toolbar, Typography } from "@mui/material"
 
 import Search from "./Search/Search"
 
-const Topbar = () => {
+function Topbar() {
   return (
     <AppBar sx={{ backgroundColor: "white" }} position="static">
       <Container>

@@ -5,7 +5,7 @@ import HeaderSkeleton from "../skeletons/Header.skeleton"
 
 import { StyledImage } from "./Header.styled"
 
-const Header = (props) => {
+function Header(props) {
   if (props.trendingMovies.isLoading) return <HeaderSkeleton />
 
   return (

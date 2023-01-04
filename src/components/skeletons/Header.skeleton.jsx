@@ -2,7 +2,7 @@ import { Skeleton } from "@mui/material"
 import { Pagination } from "swiper"
 import { Swiper, SwiperSlide } from "swiper/react"
 
-const HeaderSkeleton = () => {
+function HeaderSkeleton() {
   return (
     <Swiper modules={[Pagination]} loop={true} loopedSlides="3" pagination={{ clickable: true }}>
       <SwiperSlide>
