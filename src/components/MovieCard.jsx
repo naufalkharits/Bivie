@@ -9,7 +9,7 @@ import {
 } from "@mui/material"
 import { motion } from "framer-motion"
 
-const MovieCard = (props) => {
+function MovieCard(props) {
   return (
     <Grid
       component={motion.div}

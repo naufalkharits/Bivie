@@ -1,7 +1,7 @@
 import { ArrowBack as ArrowBackIcon, ArrowForward as ArrowForwardIcon } from "@mui/icons-material"
 import { Pagination, PaginationItem, Stack } from "@mui/material"
 
-const PageButton = (props) => {
+function PageButton(props) {
   return (
     <Stack alignItems="center">
       <Pagination

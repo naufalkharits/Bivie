@@ -2,7 +2,7 @@ import { Search as SearchIcon } from "@mui/icons-material"
 
 import { SearchIconWrapper, SearchWrapper, StyledInputBase } from "./Search.styled"
 
-const Search = () => {
+function Search() {
   return (
     <SearchWrapper>
       <SearchIconWrapper>

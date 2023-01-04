@@ -1,6 +1,6 @@
 import { Card, CardContent, Skeleton, Unstable_Grid2 as Grid } from "@mui/material"
 
-const MovieCardSkeleton = () => {
+function MovieCardSkeleton() {
   return (
     <Grid container spacing={2}>
       {/* #1 */}
